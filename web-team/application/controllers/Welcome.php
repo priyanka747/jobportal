@@ -32,4 +32,25 @@ class Welcome extends CI_Controller {
 		$this->load->view('add-joboffer');
 		$this->load->view('includes/footer');
 	}
+	public function viewCandidates()
+	{
+		$this->load->view('includes/header-view');
+		$this->load->view('includes/nav');
+		$this->load->view('view-candidates');
+		$this->load->view('includes/footer-view');
+	}
+	public function viewJobOffers()
+	{
+		$this->load->view('includes/header-view');
+		$this->load->view('includes/nav');
+		$this->load->view('view-job-offers');
+		$this->load->view('includes/footer-view');
+	}
+	public function edit()
+	{
+		$this->load->view('includes/header-view');
+		$this->load->view('includes/nav');
+		$this->load->view('edit-candidate');
+		$this->load->view('includes/footer-view');
+	}
 }

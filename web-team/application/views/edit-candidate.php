@@ -14,8 +14,8 @@
 					<div class="page-title">
 						<ol class="breadcrumb text-right">
 							<li><a href="#">Dashboard</a></li>
-							<li><a href="#">Jobs</a></li>
-							<li class="active">Add Job</li>
+							<li><a href="#">candidate</a></li>
+							<li class="active">Edit Candidate</li>
 						</ol>
 					</div>
 				</div>

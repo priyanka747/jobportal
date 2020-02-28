@@ -230,7 +230,11 @@
                 }
             });
             // Bar Chart #flotBarChart End
-        });
-    </script>
+		});
+		
+	
+	</script>
+	
+   
 </body>
 </html>
