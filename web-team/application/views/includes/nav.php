@@ -15,7 +15,9 @@
 					<li class="active">
                         <a href="<?php echo base_url();?>index.php/welcome/view-candidates"><i class="menu-icon fa fa-laptop"></i>View Candidates </a>
 					</li>
-                    
+                    <li class="active">
+                        <a href="<?php echo base_url();?>index.php/welcome/view-applications"><i class="menu-icon fa fa-laptop"></i>View Applications </a>
+					</li>
                    
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Reports</a>

@@ -50,7 +50,7 @@
                                             <td>System Architect</td>
                                             <td>Edinburgh</td>
                                             <td>$320,800</td>
-											<td> <div><a type="a" href="<?php echo base_url();?>index.phpp/welcome/edit/1" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
+											<td> <div><a type="a" href="<?php echo base_url();?>index.php/welcome/edit/1" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
                                         </tr>
                                         <tr>
                                             <td>Garrett Winters</td>

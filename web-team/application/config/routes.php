@@ -53,5 +53,6 @@ $route['default_controller'] = 'welcome';
 $route['welcome/add-job-offer'] = 'welcome/addJobOffer';
 $route['welcome/view-job-offers'] = 'welcome/viewJobOffers';
 $route['welcome/view-candidates'] = 'welcome/viewCandidates';
+$route['welcome/view-applications'] = 'welcome/viewApplications';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

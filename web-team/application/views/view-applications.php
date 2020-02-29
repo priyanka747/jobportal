@@ -14,8 +14,8 @@
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
                                     <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">Candidate</a></li>
-                                    <li class="active">View Candidates</li>
+                                    <li><a href="#">Application</a></li>
+                                    <li class="active">View Applications</li>
                                 </ol>
                             </div>
                         </div>
@@ -31,16 +31,16 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Candidates</strong>
+                                <strong class="card-title">Applications</strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Salary</th>
+                                            <th>Application no</th>
+                                            <th>Job title</th>
+                                            <th>candidate name</th>
+                                            <th>status</th>
 											<th>action</th>
                                         </tr>
                                     </thead>
@@ -50,7 +50,8 @@
                                             <td>System Architect</td>
                                             <td>Edinburgh</td>
                                             <td>$320,800</td>
-											<td> <div><a type="a" href="<?php echo base_url();?>index.php/welcome/edit/1" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
+											<td> <div>
+											<a type="a" href="<?php echo base_url();?>index.php/welcome/view/1" class="btn btn-outline-info">view</a> <a type="a" href="<?php echo base_url();?>index.php/welcome/edit/1" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
                                         </tr>
                                        <tr>
 									   <td colspan="5" class="text-center">No data at the moment</td>
