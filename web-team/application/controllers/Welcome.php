@@ -55,9 +55,10 @@ class Welcome extends CI_Controller {
 	}
 	public function edit()
 	{
-		$this->load->view('includes/header-view');
-		$this->load->view('includes/nav');
+		$data['page']="JO";
+		$this->load->view('includes/header');
+		$this->load->view('includes/nav',$data);
 		$this->load->view('edit-candidate');
-		$this->load->view('includes/footer-view');
+		$this->load->view('includes/footer');
 	}
 }

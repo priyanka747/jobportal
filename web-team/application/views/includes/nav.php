@@ -1,21 +1,23 @@
+
 <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
+                <li <?php if($page=='Dashboard')  { ?>class="active"  <?php } ?>>
+                        
                         <a href="<?php echo base_url();?>"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
 					</li>
-					<li class="menu-item-has-children dropdown">
+					<li class="menu-item-has-children dropdown <?php if($page=='JO'||$page=='JO')  { ?> class='active'  <?php } ?>">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Manage Jobs</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-table"></i><a href="<?php echo base_url();?>index.php/welcome/view-job-offers">View Jobs </a></li>
+                            <li><i class="menu-icon fa fa-table"></i><a href="<?php echo base_url();?>index.php/jobs">View Jobs </a></li>
                             <li><i class="menu-icon fa fa-table"></i><a href="<?php echo base_url();?>index.php/welcome/add-job-offer">Add Job</a></li>
                         </ul>
 					</li>
-					<li class="active">
+					<li <?php if($page=='VCS')  { ?>class="active"  <?php } ?>>
                         <a href="<?php echo base_url();?>index.php/welcome/view-candidates"><i class="menu-icon fa fa-laptop"></i>View Candidates </a>
 					</li>
-                    <li class="active">
+                    <li  <?php if($page=='VAS')  { ?>class="active"  <?php } ?>>
                         <a href="<?php echo base_url();?>index.php/welcome/view-applications"><i class="menu-icon fa fa-laptop"></i>View Applications </a>
 					</li>
                    

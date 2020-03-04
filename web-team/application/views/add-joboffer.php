@@ -48,7 +48,7 @@
 							</div>
 							 <div class="row form-group">
 								<div class="col col-md-3"><label for="salary" class=" form-control-label">Salary</label></div>
-								<div class="col-12 col-md-9"><input type="text" id="salary" name="salary" placeholder="$Amount" class="form-control"></div>
+								<div class="col-12 col-md-9"><input type="number" step="0.1" id="salary" name="salary" placeholder="$Amount" class="form-control"></div>
 							</div> 
 							<!-- <div class="row form-group">
 								<div class="col col-md-3"><label for="password-input" class=" form-control-label">Password</label></div>
