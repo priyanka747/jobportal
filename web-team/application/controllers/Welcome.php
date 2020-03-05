@@ -20,36 +20,46 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		
+		$data['page']="Dashboard";
 		$this->load->view('includes/header');
-		$this->load->view('includes/nav');
+		$this->load->view('includes/nav',$data);
 		$this->load->view('index');
 		$this->load->view('includes/footer');
 	}
 	public function addJobOffer()
 	{
+		
+		$data['page']="JO";
 		$this->load->view('includes/header');
-		$this->load->view('includes/nav');
+		$this->load->view('includes/nav',$data);
 		$this->load->view('add-joboffer');
 		$this->load->view('includes/footer');
 	}
 	public function viewCandidates()
 	{
-		$this->load->view('includes/header-view');
-		$this->load->view('includes/nav');
+		
+		$data['page']="VCS";
+		$this->load->view('includes/header');
+		$this->load->view('includes/nav',$data);
 		$this->load->view('view-candidates');
 		$this->load->view('includes/footer-view');
 	}
 	public function viewJobOffers()
 	{
-		$this->load->view('includes/header-view');
-		$this->load->view('includes/nav');
+		
+		$data['page']="JO";
+		$this->load->view('includes/header');
+		$this->load->view('includes/nav',$data);
 		$this->load->view('view-job-offers');
 		$this->load->view('includes/footer-view');
 	}
 	public function viewApplications()
 	{
-		$this->load->view('includes/header-view');
-		$this->load->view('includes/nav');
+		
+		$data['page']="VAS";
+		$this->load->view('includes/header');
+		$this->load->view('includes/nav',$data);
 		$this->load->view('view-applications');
 		$this->load->view('includes/footer-view');
 	}

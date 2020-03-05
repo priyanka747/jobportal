@@ -43,29 +43,51 @@
 								</div>
 							</div> -->
 							<div class="row form-group">
-								<div class="col col-md-3"><label for="text-input" class=" form-control-label">UserName</label></div>
+								<div class="col col-md-3"><label for="UserName" class=" form-control-label">UserName</label></div>
 								<div class="col-12 col-md-9"><input type="text" id="username" name="text-input" placeholder="Name" class="form-control"></div>
 							</div>
 							 <div class="row form-group">
-								<div class="col col-md-3"><label for="salary" class=" form-control-label">Salary</label></div>
-								<div class="col-12 col-md-9"><input type="text" id="salary" name="salary" placeholder="$Amount" class="form-control"></div>
+								<div class="col col-md-3"><label for="email" class=" form-control-label">email</label></div>
+								<div class="col-12 col-md-9"><input type="email" id="email" name="email" placeholder="email" class="form-control"></div>
 							</div> 
-							<!-- <div class="row form-group">
+							<div class="row form-group">
 								<div class="col col-md-3"><label for="password-input" class=" form-control-label">Password</label></div>
 								<div class="col-12 col-md-9"><input type="password" id="password-input" name="password-input" placeholder="Password" class="form-control"><small class="help-block form-text">Please enter a complex password</small></div>
-							</div> -->
+							</div>
 							
-							
+							<div class="row form-group">
+								<div class="col col-md-3"><label for="FirstName" class=" form-control-label">FirstName</label></div>
+								<div class="col-12 col-md-9"><input type="text" id="Fname" name="text-input" placeholder="FirstName" class="form-control"></div>
+							</div>
 
 							<div class="row form-group">
-								<div class="col col-md-3"><label for="select" class=" form-control-label">Job Type</label></div>
-								<div class="col-12 col-md-9">
-									<select name="Job Type" id="jobtype" class="form-control">
-										<option value="0">Job Type</option>
-										<option value="1">Part-Time</option>
-										<option value="2">Full-Time</option>
-									</select>
-								</div>
+								<div class="col col-md-3"><label for="FirstName" class=" form-control-label">LastName</label></div>
+								<div class="col-12 col-md-9"><input type="text" id="lname" name="text-input" placeholder="LastName" class="form-control"></div>
+							</div>
+
+							<div class="row form-group">
+								<div class="col col-md-3"><label for="dob" class=" form-control-label">Date of Birth</label></div>
+								<div class="col-12 col-md-9"><input type="text" id="dob" name="text-input" placeholder="DOB" class="form-control"></div>
+							</div>
+
+							<div class="row form-group">
+								<div class="col col-md-3"><label for="FirstName" class=" form-control-label">Phone Number</label></div>
+								<div class="col-12 col-md-9"><input type="pnumber" id="pnumber" name="text-input" placeholder="pnumber" class="form-control"></div>
+							</div>
+
+							<div class="row form-group">
+								<div class="col col-md-3"><label for="city" class=" form-control-label">city</label></div>
+								<div class="col-12 col-md-9"><input type="text" id="city" name="text-input" placeholder="City Name" class="form-control"></div>
+							</div>
+						
+							<div class="row form-group">
+								<div class="col col-md-3"><label for="State" class=" form-control-label">State</label></div>
+								<div class="col-12 col-md-9"><input type="text" id="state" name="state" placeholder="state" class="form-control"></div>
+							</div> 
+
+							<div class="row form-group">
+								<div class="col col-md-3"><label for="country" class=" form-control-label">Country</label></div>
+								<div class="col-12 col-md-9"><input type="country" id="country" name="text-input" placeholder="country" class="form-control"></div>
 							</div>
 	
 														
@@ -75,43 +97,27 @@
 							</div> 
 
 							<div class="row form-group">
-								<div class="col col-md-3"><label for="State" class=" form-control-label">State</label></div>
-								<div class="col-12 col-md-9"><input type="text" id="state" name="state" placeholder="state" class="form-control"></div>
-							</div> 
-
-							
-
-							<div class="row form-group">
-								<div class="col col-md-3"><label for="district" class=" form-control-label">district</label></div>
-								<div class="col-12 col-md-9"><input type="text" id="district" name="district" placeholder="district" class="form-control"></div>
-							</div> 
-
-							
-
-							<div class="row form-group">
-								<div class="col col-md-3"><label class=" form-control-label">Language Required</label></div>
+							<div class="col col-md-3"><label class=" form-control-label">Gender</label></div>
 								<div class="col col-md-9">
 									<div class="form-check">
-										<div class="checkbox">
-											<label for="checkbox1" class="form-check-label ">
-												<input type="checkbox" id="English" name="english" value="english" class="form-check-input">English
+										<div class="radio">
+											<label for="radio1" class="form-check-label ">
+												<input type="radio" id="male" name="male" value="0" class="form-check-input">Male
 											</label>
 										</div>
-										<div class="checkbox">
-											<label for="checkbox2" class="form-check-label ">
-												<input type="checkbox" id="french" name="french" value="french" class="form-check-input">French
+										<div class="radio">
+											<label for="radio2" class="form-check-label ">
+												<input type="radio" id="female" name="female" value="1" class="form-check-input">Female
 											</label>
 										</div>
+										<div class="radio">
+											<label for="radio3" class="form-check-label ">
+												<input type="radio" id="other" name="other" value="2" class="form-check-input">other
 											</label>
 										</div>
 									</div>
 								</div>
-
-								<div class="row form-group">
-								<div class="col col-md-3"><label for="cmpdetail" class=" form-control-label">Company Detail</label></div>
-								<div class="col-12 col-md-9"><textarea name="cmpdetail" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea></div>
 								</div>
-
 							</div>
 
 						</form>

@@ -7,11 +7,11 @@
                         
                         <a href="<?php echo base_url();?>"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
 					</li>
-					<li class="menu-item-has-children dropdown <?php if($page=='JO'||$page=='JO')  { ?> class='active'  <?php } ?>">
+					<li class="menu-item-has-children dropdown <?php if($page =='JO'||$page =='JO')  { ?> active  <?php } ?>">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Manage Jobs</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-table"></i><a href="<?php echo base_url();?>index.php/jobs">View Jobs </a></li>
-                            <li><i class="menu-icon fa fa-table"></i><a href="<?php echo base_url();?>index.php/welcome/add-job-offer">Add Job</a></li>
+                            <li><i class="menu-icon fa fa-table"></i><a href="<?php echo base_url();?>index.php/jobs/add-job">Add Job</a></li>
                         </ul>
 					</li>
 					<li <?php if($page=='VCS')  { ?>class="active"  <?php } ?>>

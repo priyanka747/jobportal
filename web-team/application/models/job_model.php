@@ -4,12 +4,12 @@ class Job_model extends CI_Model
 	/*soft delete expired jobs*/
 	function __construct()
 	{	
-		$data = $this->db->select('job_id')->from('jobs')->where('deleted','no')->where('expires <=',date('Y-m-d'))->get()->result();
-		if($data)
-		{	$expired = array();
-			foreach($data as $d) array_push($expired,array('job_id'=>$d->job_id,'deleted'=>'yes'));
-			$this->db->update_batch('jobs',$expired,'job_id');
-		}
+		// $data = $this->db->select('job_id')->from('jobs')->where('deleted','no')->where('expires <=',date('Y-m-d'))->get()->result();
+		// if($data)
+		// {	$expired = array();
+		// 	foreach($data as $d) array_push($expired,array('job_id'=>$d->job_id,'deleted'=>'yes'));
+		// 	$this->db->update_batch('jobs',$expired,'job_id');
+		// }
 	}
 	
 	function post_job($data)
@@ -37,11 +37,6 @@ class Job_model extends CI_Model
 		return $this->db->update('jobs',$data);
 	}
 	
-	function validate_author($id)
-	{
-		$where = array('deleted'=>'no','job_id'=>$id,'created_by'=>$this->session->userdata('user')->user_id);
-		return $this->db->from('jobs')->where('deleted','no')->where($where)->get()->num_rows();
-	}
 	
 	function get_salary_range()
 	{
@@ -54,13 +49,20 @@ class Job_model extends CI_Model
 	{   
 		$this->db->select('*');
 		$this->db->from('jobs');	
-		$this->db->where('deleted','no');
+		$this->db->where('status','');
 		$this->db->where('salary_min >=',$data['salary_min']);
 		$this->db->where('salary_max <=',$data['salary_max']);
 		if(isset($data['city']))
 		{
 			$this->db->where_in('location',$data["city"]);
 		}
+		$this->db->order_by('date_created','desc');
+		return $this->db->get()->result();
+	}
+	function get_jobs()
+	{   
+		$this->db->select('*');
+		$this->db->from('jobs');
 		$this->db->order_by('date_created','desc');
 		return $this->db->get()->result();
 	}

@@ -4,7 +4,7 @@ class Jobs extends CI_Controller
 	function __Construct()
 	{
 		parent:: __construct();
-		$this->load->model('job_model');
+		$this->load->model('user_model');
 		// load form and url helpers
         $this->load->helper(array('form', 'url'));
          
@@ -14,11 +14,11 @@ class Jobs extends CI_Controller
 
 	function index()
 	{
-		$data['page'] = 'JO';
-		// $data['jobs']= $this->job_model->get_jobs();
+		$data['page'] = 'VCS';
+		$data['jobs']= $this->user_model->get_users();
 		$this->load->view('includes/header');
 		$this->load->view('includes/nav',$data);
-		$this->load->view('view-job-offers',$data);
+		$this->load->view('index',$data);
 		$this->load->view('includes/footer');
 	}
 	
@@ -53,13 +53,7 @@ class Jobs extends CI_Controller
 		else
 			redirect('jobs');
 	}
-	function addJobOffer(){
-		$data['page']="JO";
-		$this->load->view('includes/header');
-		$this->load->view('includes/nav',$data);
-		$this->load->view('add-joboffer');
-		$this->load->view('includes/footer');
-	}
+	
 	/*Open job form in edit mode*/
 	function edit()
 	{
