@@ -8,6 +8,8 @@ class Home extends CI_Controller
 	
 	function index()
 	{
+		if(!$this->session->userdata('user'))	redirect(base_url().'index.php/login');
+
 		$data['page'] = 'Dashboard';
 		$this->load->view('includes/header');
 		$this->load->view('includes/nav',$data);

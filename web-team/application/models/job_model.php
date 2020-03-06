@@ -17,6 +17,13 @@ class Job_model extends CI_Model
 		$this->db->insert('jobs',$data);
 		return $this->db->insert_id();
 	}
+	function get_jobs()
+	{   
+		$this->db->select('*');
+		$this->db->from('jobs');
+		$this->db->order_by('date_created','desc');
+		return $this->db->get()->result();
+	}
 	
 	function update_job($data,$job_id)
 	{
@@ -26,25 +33,15 @@ class Job_model extends CI_Model
 	
 	function get_job($job_id)
 	{
-		return $this->db->select('jobs.*,users.name')->from('jobs')->join('users','users.user_id=jobs.created_by')->where('jobs.job_id',$job_id)->where('jobs.deleted','no')->get()->row();
+		return $this->db->select('*')->from('jobs')->where('job_id',$job_id)->get()->row();
 	}
 	
 	function delete($id)
 	{
-		$data['deleted']='yes';
-		$where['job_id']=$id;
-		$this->db->where($where);
-		return $this->db->update('jobs',$data);
+		$this->db->set('status', 'delete');
+$this->db->where('id', $id);
+		return $this->db->update('jobs');
 	}
-	
-	
-	function get_salary_range()
-	{
-		$data['salary_min'] = 	$this->db->select('salary_min')->from('jobs')->where('deleted','no')->order_by('salary_min','asc')->limit(1)->get()->row()->salary_min;
-		$data['salary_max'] = 	$this->db->select('salary_max')->from('jobs')->where('deleted','no')->order_by('salary_max','desc')->limit(1)->get()->row()->salary_max;
-		return $data;
-	}
-	
 	function filter_result($data)
 	{   
 		$this->db->select('*');
@@ -59,12 +56,15 @@ class Job_model extends CI_Model
 		$this->db->order_by('date_created','desc');
 		return $this->db->get()->result();
 	}
-	function get_jobs()
-	{   
-		$this->db->select('*');
-		$this->db->from('jobs');
-		$this->db->order_by('date_created','desc');
-		return $this->db->get()->result();
+	
+	function get_salary_range()
+	{
+		$data['salary_min'] = 	$this->db->select('salary_min')->from('jobs')->where('deleted','no')->order_by('salary_min','asc')->limit(1)->get()->row()->salary_min;
+		$data['salary_max'] = 	$this->db->select('salary_max')->from('jobs')->where('deleted','no')->order_by('salary_max','desc')->limit(1)->get()->row()->salary_max;
+		return $data;
 	}
+	
+	
+	
 }
 ?>

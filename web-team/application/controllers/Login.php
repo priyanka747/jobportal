@@ -10,17 +10,21 @@ class Login extends CI_Controller
 	function index()
 	{
 		if($this->session->userdata('user'))	redirect(base_url());
-		$data['tab'] = 'LOGIN';
-		$this->load->view('header',$data);
+		
+		$data['page'] = 'login';
+			
+		$this->load->view('includes/header-login-signup');
 		$this->load->view('login');
+		$this->load->view('includes/footer-login-signup');
 	}
 	
 	function verify_login()
 	{	
-		$email = $this->security->xss_clean($this->input->post('l_email'));
-		$password = md5(md5($this->security->xss_clean($this->input->post('l_password'))));
-		$where = array('email'=>$email,'password'=>$password);
-		$res= $this->user_model->verify_login($where);
+		$email = $this->security->xss_clean($this->input->post('email'));
+		$password = sha1($this->security->xss_clean($this->input->post('password')));
+		
+		$res= $this->user_model->verify_login($email,$password);
+		print_r($res);
 		if($res)
 		{
 			$this->session->set_userdata('user',$res);
@@ -31,28 +35,28 @@ class Login extends CI_Controller
 				redirect($re);				
 			}
 			else
-				redirect(base_url());
+				redirect('/');
 		}
 		else
 		{
 			$this->session->set_userdata('login_status','failed');
-			redirect('login');
+			redirect('index.php/login');
 		}	 
 	}
-	/*New user registration*/
-	function register()
-	{
-		$name = $this->security->xss_clean($this->input->post('r_name'));
-		$email = $this->security->xss_clean($this->input->post('r_email'));
-		$password = md5(md5($this->security->xss_clean($this->input->post('r_pass'))));
-		$data = array('name'=>$name,'email'=>$email,'password'=>$password,'date_created'=>date('Y-m-d H:i:s'));
-		$res= $this->user_model->register($data);
-		if($res)
-		{
-			$this->session->set_userdata('login_status','register_success');
-			redirect('login');
-		}
-	}	
+	// /*New user registration*/
+	// function register()
+	// {
+	// 	$name = $this->security->xss_clean($this->input->post('r_name'));
+	// 	$email = $this->security->xss_clean($this->input->post('r_email'));
+	// 	$password = sha1(sha1($this->security->xss_clean($this->input->post('r_pass'))));
+	// 	$data = array('name'=>$name,'email'=>$email,'password'=>$password,'date_created'=>date('Y-m-d H:i:s'));
+	// 	$res= $this->user_model->register($data);
+	// 	if($res)
+	// 	{
+	// 		$this->session->set_userdata('login_status','register_success');
+	// 		redirect('login');
+	// 	}
+	// }	
 	/*Avoid email duplication while registration*/
 	function check_email()
 	{

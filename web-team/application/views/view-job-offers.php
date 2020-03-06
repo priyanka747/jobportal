@@ -38,7 +38,7 @@
                                     <thead>
                                         <tr>
                                             <th>title</th>
-                                            <th>Position</th>
+                                            <th>Description</th>
                                             <th>location</th>
                                             <th>Salary</th>
 											<th>action</th>
@@ -46,21 +46,19 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>$320,800</td>
-											<td> <div><a type="a" href="<?php echo base_url();?>index.php/welcome/edit/1" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
+                                            <td>  <?php echo $jobs[0]['title']; ?></td>
+                                            <td> <?php echo $jobs[0]['description']; ?></td>
+                                            <td> <?php echo $jobs[0]['city']; ?>,<?php echo $jobs[0]['state']; ?></td>
+                                            <td> $<?php echo $jobs[0]['salary']; ?></td>
+											<td> <div><a type="a" href="<?php echo base_url();?>index.php/jobs/edit/<?php echo $jobs[0]['job_id']; ?>" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
                                         </tr>
                                         
                                     </tbody>
                                 </table>
                             </div>
-                            <?php print_r($jobs);?>
+                            
                         </div>
                     </div>
-
-
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
