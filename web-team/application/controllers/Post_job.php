@@ -13,7 +13,7 @@ class Post_job extends CI_Controller
 		{
 			$this->session->set_userdata('login_status','login_needed');
 			$this->session->set_userdata('redirectTo','post_job');
-			redirect('login');
+			redirect('index.php/login');
 		}
 		else
 		{

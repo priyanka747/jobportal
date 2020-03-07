@@ -8,13 +8,27 @@ class Home extends CI_Controller
 	
 	function index()
 	{
-		if(!$this->session->userdata('user'))	redirect(base_url().'index.php/login');
-
-		$data['page'] = 'Dashboard';
-		$this->load->view('includes/header');
-		$this->load->view('includes/nav',$data);
-		$this->load->view('index');
-		$this->load->view('includes/footer');
+		if($this->session->userdata('user')){
+			$user=json_decode(json_encode($this->session->userdata('user')),true);
+			if($user[0]['user_type']=='candidate'){
+				$this->load->view('candidate/includes/header');
+				$this->load->view('candidate/includes/nav');
+				$this->load->view('candidate/index');
+				$this->load->view('candidate/includes/footer');
+			}else{
+					$data['page'] = 'Dashboard';
+					$this->load->view('includes/header');
+					$this->load->view('includes/nav',$data);
+					$this->load->view('index');
+					$this->load->view('includes/footer');
+			}
+		}else{
+			$this->load->view('candidate/includes/header');
+			$this->load->view('candidate/includes/nav');
+			$this->load->view('candidate/index');
+			$this->load->view('candidate/includes/footer');
+		}
+		
 	}
 }
 ?>

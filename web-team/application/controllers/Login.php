@@ -12,10 +12,17 @@ class Login extends CI_Controller
 		if($this->session->userdata('user'))	redirect(base_url());
 		
 		$data['page'] = 'login';
-			
-		$this->load->view('includes/header-login-signup');
-		$this->load->view('login');
-		$this->load->view('includes/footer-login-signup');
+		$this->load->view('candidate/includes/header-c-login');
+		$this->load->view('candidate/login');
+		$this->load->view('candidate/includes/footer-c-login');
+	}
+	function candidate_login()
+	{
+		if($this->session->userdata('user'))	redirect(base_url());
+		
+		$data['page'] = 'login';
+				
+	
 	}
 	
 	function verify_login()
@@ -24,7 +31,7 @@ class Login extends CI_Controller
 		$password = sha1($this->security->xss_clean($this->input->post('password')));
 		
 		$res= $this->user_model->verify_login($email,$password);
-		print_r($res);
+		// print_r($res);
 		if($res)
 		{
 			$this->session->set_userdata('user',$res);
@@ -32,15 +39,47 @@ class Login extends CI_Controller
 			{	
 				$re = $this->session->userdata('redirectTo');
 				$this->session->unset_userdata('redirectTo');
-				redirect($re);				
+				// redirect($re);				
 			}
-			else
-				redirect('/');
+			// else
+				// redirect('/');
 		}
 		else
 		{
 			$this->session->set_userdata('login_status','failed');
-			redirect('index.php/login');
+			// redirect('index.php/login');
+		}	 
+	}
+	function verify_candidate(){
+		$email = $this->security->xss_clean($this->input->post('email'));
+		$password = sha1($this->security->xss_clean($this->input->post('password')));
+		
+		$res= $this->user_model->verify_login($email,$password);
+		// print_r($res[0]['user_type']);
+		if($res)
+		{
+			
+			$this->session->set_userdata('user',$res);
+			if($res[0]['user_type'] == 'candidate'){
+				redirect('index.php/candidate/');
+			}
+			else
+			{
+				redirect('index.php/login');
+			}
+			// if($this->session->userdata('redirectTo'))
+			// {	
+			// 	$re = $this->session->userdata('redirectTo');
+			// 	$this->session->unset_userdata('redirectTo');
+			// 	// redirect($re);				
+			// }
+			// else
+				// redirect('/');
+		}
+		else
+		{
+			$this->session->set_userdata('login_status','failed');
+			// redirect('index.php/login');
 		}	 
 	}
 	// /*New user registration*/

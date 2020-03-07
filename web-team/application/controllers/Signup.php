@@ -13,9 +13,9 @@ class Signup extends CI_Controller
 		
 		$data['page'] = 'signup';
 			
-		$this->load->view('includes/header-login-signup');
-		$this->load->view('signup');
-		$this->load->view('includes/footer-login-signup');
+		$this->load->view('candidate/includes/header-c-login');
+		$this->load->view('candidate/signup');
+		$this->load->view('candidate/includes/footer-c-login');
 	}
 	/*New user registration*/
 	function register()

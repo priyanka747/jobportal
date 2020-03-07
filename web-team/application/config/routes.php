@@ -51,9 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'home';
 $route['login']='login';   
-$route['authenticate']='login/verify_login';   
+$route['authenticate']='login/verify_login'; 
+$route['candidate']='home'; 
+// $route['candidate/login']='login/candidate_login'; 
+$route['candidate/authenticate']='login/verify_candidate'; 
+$route['candidate/lost-password']='lostpassword'; 
+$route['candidate/signup']='signup/register'; 
 $route['create-account']='signup';   
-$route['register-user']='signup/register';   
 $route['jobs'] = 'jobs';
 $route['jobs/add-job'] = 'jobs/addJobOffer';
 $route['welcome/view-applications'] = 'welcome/viewApplications';
