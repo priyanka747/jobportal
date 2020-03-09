@@ -4,11 +4,11 @@
 				<div class="container">
 					<div class="signup-screen">
 						<a href="index-2.html"><img src="assets/img/logo.png" class="img-responsive" alt=""></a>
-						<form>
-							<input type="text" class="form-control" placeholder="Your Name">
-							<input type="email" class="form-control" placeholder="Your Email">
-							<input type="text" class="form-control" placeholder="Useraname">
-							<input type="password" class="form-control" placeholder="Password">
+						<form action="<?php echo base_url();?>index.php/candidate/signup" method="POST">
+							<input type="text" class="form-control" placeholder="first Name" name="r_fname" id="r_fname" >
+							<input type="text" class="form-control" placeholder="last Name" name="r_lname" id="r_lname" >
+							<input type="email" class="form-control" placeholder="email" name="r_email" id="r_email" >
+							<input type="password" class="form-control" placeholder="Password" name="r_pass" id="r_pass" >
 							<button class="btn btn-login" type="submit" >Sign Up</button>
 							<span>Have You Account? <a href="<?php echo base_url();?>index.php/candidate/login"> Login</a></span>	
 						</form>

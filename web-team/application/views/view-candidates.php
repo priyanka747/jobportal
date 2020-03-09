@@ -37,26 +37,26 @@
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Salary</th>
+                                            <th>Email</th>
+                                            <th>name</th>
 											<th>action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php 
-                                        $row_cnt=count($jobs);
+                                        $row_cnt=count($candidates);
+                                        if($row_cnt>0){
                                         for($i=0;$i<$row_cnt;$i++){?>
                                         <tr>
-                                            <td>  <?php echo $jobs[$i]['title']; ?></td>
-                                            <td> <?php echo $jobs[$i]['description']; ?></td>
-                                            <td> <?php echo $jobs[$i]['city']; ?>,<?php echo $jobs[0]['state']; ?></td>
-                                            <td> $<?php echo $jobs[$i]['salary']; ?></td>
-											<td> <div><a type="a" href="<?php echo base_url();?>index.php/jobs/edit/<?php echo $jobs[$i]['job_id']; ?>" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
+                                            <td>  <?php echo $candidates[$i]['email']; ?></td>
+                                            <td> <?php echo $candidates[$i]['firstname']; ?> <?php echo $candidates[0]['state']; ?></td>
+											<td> <div><a type="a" href="<?php echo base_url();?>index.php/users/edit/<?php echo $candidates[$i]['id']; ?>" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
                                         </tr>
                                         <?php
-                                        }else{
+                                        }
+                                        }
+                                        else
+                                        {
                                         ?>
                                        <tr>
 									   <td colspan="5" class="text-center">No data at the moment</td>

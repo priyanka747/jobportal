@@ -36,7 +36,7 @@ class Signup extends CI_Controller
 		{
             $this->session->set_userdata('login_status','register_success');
             $this->session->set_userdata('login_status','register_success');
-			redirect('login');
+			redirect(base_url('index.php/login'));
 		}
 	}	
 	/*Avoid email duplication while registration*/

@@ -4,7 +4,7 @@ class Candidate extends CI_Controller
 	function __Construct()
 	{
 		parent:: __construct();
-		$this->load->model('job_model');
+		$this->load->model('user_model');
 		// load form and url helpers
         $this->load->helper(array('form', 'url'));
          
