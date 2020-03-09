@@ -1,7 +1,5 @@
-<div class="clearfix"></div>
-			
-			<!-- Title Header Start -->
-			<section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+<!-- Title Header Start -->
+<section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
 				<div class="container">
 					<h1>Our Package</h1>
 				</div>
@@ -166,3 +164,4 @@
 				</div>
 			</section>
 			<!-- End Pricing Section -->
+			

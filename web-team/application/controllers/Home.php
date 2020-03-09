@@ -10,7 +10,7 @@ class Home extends CI_Controller
 	{
 		if($this->session->userdata('user')){
 			$user=json_decode(json_encode($this->session->userdata('user')),true);
-			if($user[0]['user_type']=='candidate'){
+			if($user[0]['user_type']=='candidate'git){
 				$this->load->view('candidate/includes/header');
 				$this->load->view('candidate/includes/nav');
 				$this->load->view('candidate/index');
