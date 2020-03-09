@@ -33,47 +33,44 @@ class Post_job extends CI_Controller
 		if(isset($_POST['form']))
 		{	
 			$data = array(
-			'title' => $this->security->xss_clean($_POST['title']),
-			'company' => $this->security->xss_clean($_POST['company']),
-			'location' => $this->security->xss_clean($_POST['location']),
+			'title' => $this->security->xss_clean($_POST['jtitle']),
 			'description' => $this->security->xss_clean($_POST['description']),
-			'responsibilities' => $this->security->xss_clean($_POST['responsibilities']),
-			'skills' => $this->security->xss_clean($_POST['skills']),
-			'perks' => $this->security->xss_clean($_POST['perks']),
-			'salary_min' => $this->security->xss_clean($_POST['salary_min']),
-			'salary_max' => $this->security->xss_clean($_POST['salary_max']),
-			'duration' => $this->security->xss_clean($_POST['duration']),
-			'expires' => $this->security->xss_clean($_POST['expires']),
-			'created_by' => $this->session->userdata('user')->user_id,
+			'salary' => $this->security->xss_clean($_POST['salary']),
+			'type' => $this->security->xss_clean($_POST['jobtype']),
+			'skill_id' => $this->security->xss_clean($_POST['skillreq']),
+			'state' => $this->security->xss_clean($_POST['state']),
+			'city' => $this->security->xss_clean($_POST['city']),
+			'language' =>implode(',',$this->security->xss_clean($_POST['lang'])),
 			'status' => 'active',
 			'date_created' => date('Y-m-d H:i:s')
 			);
-			
-			if($_POST['form_type']=='submit')
-			{
+			print_r($data);
+			// if($_POST['form_type']=='submit')
+			// {
 				$id = $this->job_model->post_job($data);
-				if(!$id)
-					redirect(base_url());
-				else
-					redirect('jobs/view/'.$id);
+				echo $id;
+				// if(!$id)
+					redirect(base_url('index.php/jobs'));
+				// else
+				// 	redirect('jobs/view/'.$id);
 			}			
-			else if($_POST['form_type']=='edit')
-			{
-				unset($data['date_created']);
-				$data['date_modified'] = date('Y-m-d H:i:s');
-				$job_id = $_POST['job_id'];
-				$id = $this->job_model->update_job($data,$job_id);
-				if(!$id)
-					redirect(base_url());
-				else
-					redirect('jobs/view/'.$job_id);
-			}
+			// else if($_POST['form_type']=='edit')
+			// {
+			// 	unset($data['date_created']);
+			// 	$data['date_modified'] = date('Y-m-d H:i:s');
+			// 	$job_id = $_POST['job_id'];
+			// 	$id = $this->job_model->update_job($data,$job_id);
+			// 	if(!$id)
+			// 		redirect(base_url());
+			// 	else
+			// 		redirect('jobs/view/'.$job_id);
+			// }
 			
-		}
-		else
-			redirect(base_url());
-		}
-
+		// }
+		// else
+		// 	redirect(base_url());
+		// }
+			}
 	// 	function add(){
 	// 		// basic required field
 	// 		$this->form_validation->set_rules('jtitle', 'Text Field One', 'required');
@@ -112,8 +109,8 @@ class Post_job extends CI_Controller
 	// 		}
 	// 		else
 	// 		{
-	// 			// load success template...
-	// 			echo "It's all Good!";
+	// 		
+	// 			
 	// 		}
 	// }
 	

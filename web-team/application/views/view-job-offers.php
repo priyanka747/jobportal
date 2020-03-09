@@ -45,13 +45,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php 
+                                        $row_cnt=count($jobs);
+                                        for($i=0;$i<$row_cnt;$i++){?>
                                         <tr>
-                                            <td>  <?php echo $jobs[0]['title']; ?></td>
-                                            <td> <?php echo $jobs[0]['description']; ?></td>
-                                            <td> <?php echo $jobs[0]['city']; ?>,<?php echo $jobs[0]['state']; ?></td>
-                                            <td> $<?php echo $jobs[0]['salary']; ?></td>
-											<td> <div><a type="a" href="<?php echo base_url();?>index.php/jobs/edit/<?php echo $jobs[0]['job_id']; ?>" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
+                                            <td>  <?php echo $jobs[$i]['title']; ?></td>
+                                            <td> <?php echo $jobs[$i]['description']; ?></td>
+                                            <td> <?php echo $jobs[$i]['city']; ?>,<?php echo $jobs[0]['state']; ?></td>
+                                            <td> $<?php echo $jobs[$i]['salary']; ?></td>
+											<td> <div><a type="a" href="<?php echo base_url();?>index.php/jobs/edit/<?php echo $jobs[$i]['job_id']; ?>" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
                                         </tr>
+                                        <?php
+                                        }
+                                        ?>
                                         
                                     </tbody>
                                 </table>

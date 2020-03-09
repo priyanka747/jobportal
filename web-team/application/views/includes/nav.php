@@ -15,7 +15,7 @@
                         </ul>
 					</li>
 					<li <?php if($page=='VCS')  { ?>class="active"  <?php } ?>>
-                        <a href="<?php echo base_url();?>index.php/welcome/view-candidates"><i class="menu-icon fa fa-laptop"></i>View Candidates </a>
+                        <a href="<?php echo base_url();?>index.php/candidate/views"><i class="menu-icon fa fa-laptop"></i>View Candidates </a>
 					</li>
                     <li  <?php if($page=='VAS')  { ?>class="active"  <?php } ?>>
                         <a href="<?php echo base_url();?>index.php/welcome/view-applications"><i class="menu-icon fa fa-laptop"></i>View Applications </a>

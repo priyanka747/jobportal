@@ -45,16 +45,25 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-									<tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>$320,800</td>
-											<td> <div><a type="a" href="<?php echo base_url();?>index.php/welcome/edit/1" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
+                                    <?php 
+                                        $row_cnt=count($jobs);
+                                        for($i=0;$i<$row_cnt;$i++){?>
+                                        <tr>
+                                            <td>  <?php echo $jobs[$i]['title']; ?></td>
+                                            <td> <?php echo $jobs[$i]['description']; ?></td>
+                                            <td> <?php echo $jobs[$i]['city']; ?>,<?php echo $jobs[0]['state']; ?></td>
+                                            <td> $<?php echo $jobs[$i]['salary']; ?></td>
+											<td> <div><a type="a" href="<?php echo base_url();?>index.php/jobs/edit/<?php echo $jobs[$i]['job_id']; ?>" class="btn btn-outline-info">Edit</a> <a type="a" class="btn btn-outline-danger">Delete</a></div></td>
                                         </tr>
+                                        <?php
+                                        }else{
+                                        ?>
                                        <tr>
 									   <td colspan="5" class="text-center">No data at the moment</td>
-									   </tr>
+                                       </tr>
+                                       <?php
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

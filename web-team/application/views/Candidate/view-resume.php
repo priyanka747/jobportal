@@ -1,7 +1,7 @@
 <div class="clearfix"></div>
 			
 			<!-- Title Header Start -->
-			<section class="inner-header-title" style="background-image:url(assets/img/banner-10.jpg);">
+			<section class="inner-header-title" style="background-image:url(<?php echo base_url() ?>assets/img/banner-10.jpg);">
 				<div class="container">
 					<h1>Resume Detail</h1>
 				</div>
@@ -14,11 +14,11 @@
 				<div class="container white-shadow">
 					<div class="row mrg-0">
 						<div class="detail-pic">
-							<img src="assets/img/client-1.jpg" class="img" alt="" />
+							<img src="<?php echo base_url() ?>assets/img/client-1.jpg" class="img" alt="" />
 							<a href="#" class="detail-edit" title="edit" ><i class="fa fa-pencil"></i></a>
 						</div>
 						<div class="detail-status">
-							<span>7 Hour Days Ago</span>
+							<!-- <span></span> -->
 						</div>
 					</div>
 					<div class="row bottom-mrg mrg-0">
@@ -59,7 +59,7 @@
 							<div class="col-md-7 col-sm-7">
 								<div class="detail-pannel-footer-btn pull-right">
 									<a href="#" class="footer-btn grn-btn" title="">Hire Now</a>
-									<a href="#" class="footer-btn blu-btn" title="">Edit</a>
+									<a href="<?php echo base_url() ?>index.php/candidate/resume/edit/1" class="footer-btn blu-btn" title="">Edit</a>
 								</div>
 							</div>
 						</div>

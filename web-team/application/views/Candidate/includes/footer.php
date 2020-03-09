@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="col-md-3 col-sm-12">
                     <div class="footer-widget">
-                        <h3 class="widgettitle widget-title">About Job Stock</h3>
+                        <h3 class="widgettitle widget-title">About MyCvOnline</h3>
 
                         <div class="textwidget">
                             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
@@ -90,7 +90,7 @@
         </div>
         <div class="row copyright">
             <div class="container">
-                <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+                <p><a target="_blank" href="<?php echo base_url();?>">MyCVOnline</a></p>
             </div>
         </div>
     </footer>
@@ -157,21 +157,7 @@
             </div>
         </div>
     </div>
-    <button class="w3-button w3-teal w3-xlarge w3-right" onclick="openRightMenu()"><i class="spin fa fa-cog"
-                                                                                      aria-hidden="true"></i></button>
-    <div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-right" style="display:none;right:0;" id="rightMenu">
-        <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-        <ul id="styleOptions" title="switch styling">
-            <li><a href="javascript: void(0)" class="cl-box blue" data-theme="colors/blue-style"></a></li>
-            <li><a href="javascript: void(0)" class="cl-box red" data-theme="colors/red-style"></a></li>
-            <li><a href="javascript: void(0)" class="cl-box purple" data-theme="colors/purple-style"></a></li>
-            <li><a href="javascript: void(0)" class="cl-box green" data-theme="colors/green-style"></a></li>
-            <li><a href="javascript: void(0)" class="cl-box dark-red" data-theme="colors/dark-red-style"></a></li>
-            <li><a href="javascript: void(0)" class="cl-box orange" data-theme="colors/orange-style"></a></li>
-            <li><a href="javascript: void(0)" class="cl-box sea-blue" data-theme="colors/sea-blue-style "></a></li>
-            <li><a href="javascript: void(0)" class="cl-box pink" data-theme="colors/pink-style"></a></li>
-        </ul>
-    </div>
+
     <!-- Scripts==================================================-->
     <script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/js/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/js/viewportchecker.js"></script>

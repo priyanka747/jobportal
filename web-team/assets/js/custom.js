@@ -1,5 +1,4 @@
 /*************************************
-@@File: Job Stock  Template Custom Js
 
 All custom js files contents are below
 **************************************

@@ -17,7 +17,7 @@
                         
                         <li><a href="<?php echo base_url();?>index.php/login/"><i class="fa fa-pencil" aria-hidden="true"></i>login</a></li>
                     <?php }?>
-                    <li><a href="pricing.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Pricing</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/candidate/info/pricing"><i class="fa fa-sign-in" aria-hidden="true"></i>Pricing</a></li>
                     <!-- <li class="left-br"><a href="javascript:void(0)" data-toggle="modal" data-target="#signup"
                                            class="signin">Sign In Now</a></li> -->
                 </ul>
@@ -88,7 +88,7 @@
 
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="job-apply-detail.html">FAQ</a></li>
+                                                <li><a href="<?php echo base_url();?>index.php/candidate/info/faq">FAQ</a></li>
                                                  <!-- <li><a href="freelancer-detail.html">Freelancer detail</a></li>
                                                 <li><a href="payment-methode.html">Payment Methode</a></li>
                                                 <li><a href="new-login-signup.html">New LogIn / SignUp</a></li>

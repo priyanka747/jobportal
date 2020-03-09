@@ -35,7 +35,7 @@
 						Add New Job Post
 					</div>
 					<div class="card-body card-block">
-						<form action="jobs/add" method="post"  class="form-horizontal">
+						<form action="<?php echo base_url(); ?>index.php/post-job/add" method="post"  class="form-horizontal">
 							<div class="row form-group">
 								<div class="col col-md-3"><label for="text-input" class=" form-control-label">Job Title</label></div>
 								<div class="col-12 col-md-9"><input type="text" id="jtitle" name="jtitle" placeholder="Job Title" class="form-control"></div>
@@ -50,8 +50,8 @@
 								<div class="col-12 col-md-9">
 									<select name="jobtype" id="jobtype" class="form-control">
 										<option value="0">Job Type</option>
-										<option value="1">Part-Time</option>
-										<option value="2">Full-Time</option>
+										<option value="part-time">Part-Time</option>
+										<option value="full-time">Full-Time</option>
 									</select>
 								</div>
 							</div>
@@ -66,8 +66,8 @@
 								<div class="col-12 col-md-9"><input type="text" id="state" name="state" placeholder="state" class="form-control"></div>
 							</div> 
 							<div class="row form-group">
-								<div class="col col-md-3"><label for="district" class=" form-control-label">district</label></div>
-								<div class="col-12 col-md-9"><input type="text" id="district" name="district" placeholder="district" class="form-control"></div>
+								<div class="col col-md-3"><label for="district" class=" form-control-label">city</label></div>
+								<div class="col-12 col-md-9"><input type="text" id="city" name="city" placeholder="district" class="form-control"></div>
 							</div> 
 							<div class="row form-group">
 								<div class="col col-md-3"><label class=" form-control-label">Language Required</label></div>
@@ -75,12 +75,12 @@
 									<div class="form-check">
 										<div class="checkbox">
 											<label for="checkbox1" class="form-check-label ">
-												<input type="checkbox" id="English" name="lang" value="english" class="form-check-input">English
+												<input type="checkbox" id="English" name="lang[]" value="en" class="form-check-input">English
 											</label>
 										</div>
 										<div class="checkbox">
 											<label for="checkbox2" class="form-check-label ">
-												<input type="checkbox" id="french" name="lang" value="french" class="form-check-input">French
+												<input type="checkbox" id="french" name="lang[]" value="fr" class="form-check-input">French
 											</label>
 										</div>
 											</label>
@@ -94,18 +94,14 @@
 								</div>
 
 							</div>
-
+							<div class="card-footer">
+						<input type="submit" class="btn btn-primary btn-sm" name="form">
+						<input type="reset" class="btn btn-danger btn-sm" name="Reset">
+					</div>
 					
 						</form>
 					</div>
-					<div class="card-footer">
-						<button type="submit" class="btn btn-primary btn-sm">
-							<i class="fa fa-dot-circle-o"></i> Submit
-						</button>
-						<button type="reset" class="btn btn-danger btn-sm">
-							<i class="fa fa-ban"></i> Reset
-						</button>
-					</div>
+					
 				</div>
 				
 			</div>
